@@ -21,6 +21,10 @@
           <a href="/posts/<%= post.id %>/edit">Edit</a>
         </td>
         <td>
+          <form action="/posts/<%= post.id %>" method="POST">
+            <input name="_method" type="hidden" value="DELETE" />
+            <input type="submit" value="Destroy">
+          </form>
         </td>
       </tr>
     <% end %>
