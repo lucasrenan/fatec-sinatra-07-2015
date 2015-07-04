@@ -28,6 +28,12 @@ get '/posts/:id/edit' do
   erb :edit
 end
 
+# GET /posts/1
+get '/posts/:id' do
+  @post = Post.find(params[:id])
+  erb :show
+end
+
 # POST /posts
 post '/posts' do
   @post = Post.new(params[:post])
