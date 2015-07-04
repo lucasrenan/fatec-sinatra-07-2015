@@ -56,6 +56,24 @@ put '/posts/:id' do
   end
 end
 
+# DELETE /posts/1
+delete '/posts/:id' do
+  post = Post.find(params[:id])
+  post.destroy
+  redirect to("/")
+end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
