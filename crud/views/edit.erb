@@ -1,0 +1,14 @@
+<h1>Editing Post</h1>
+
+<%= erb :_form_errors, layout: false %>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+  <%= erb :_form_fields, layout: false %>
+
+  <input name="_method" type="hidden" value="PUT" />
+
+  <input type="submit" value="Update">
+</form>
+
+<a href="/posts/<%= @post.id %>">Show</a> |
+<a href="/">Back</a>

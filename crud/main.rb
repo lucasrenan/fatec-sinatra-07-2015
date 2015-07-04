@@ -22,6 +22,12 @@ get '/posts/new' do
   erb :new
 end
 
+# GET /posts/1/edit
+get '/posts/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :edit
+end
+
 # POST /posts
 post '/posts' do
   @post = Post.new(params[:post])
@@ -33,7 +39,16 @@ post '/posts' do
   end
 end
 
+# PUT /posts/1
+put '/posts/:id' do
+  @post = Post.find(params[:id])
 
+  if @post.update(params[:post])
+    redirect to("/")
+  else
+    erb :edit
+  end
+end
 
 
 
